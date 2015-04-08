@@ -165,11 +165,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CarModel.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Evaluation.cs" />
+    <Compile Include="Models\IdentityDetails.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IdentityStatistics.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\OfferModel.cs" />
-    <Compile Include="Models\PassengerModel.cs" />
+    <Compile Include="Models\Offer.cs" />
+    <Compile Include="Models\Passenger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
