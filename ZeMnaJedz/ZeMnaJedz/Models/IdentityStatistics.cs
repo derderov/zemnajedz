@@ -14,5 +14,7 @@ namespace ZeMnaJedz.Models
         public int SafetyRatingSum { get; set; }
         public int RatingTotal { get; set; }
         public int SafetyRatingTotal { get; set; }
+
+        public virtual IdentityDetails IdentityDetails { get; set; }
     }
 }

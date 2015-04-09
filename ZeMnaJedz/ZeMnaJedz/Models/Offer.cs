@@ -10,6 +10,7 @@ namespace ZeMnaJedz.Models
     {
         public int ID { get; set; }
         public int IdentityID { get; set; }
+        public int CarID { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
         public string Destination { get; set; }
@@ -22,5 +23,7 @@ namespace ZeMnaJedz.Models
         public string AdditionalInfo { get; set; }
         public ICollection<Passenger> Passengers { get; set; }
 
+        public virtual IdentityDetails IdentityDetails { get; set; }
+        public virtual Car Car { get; set; }
     }
 }

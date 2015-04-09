@@ -19,5 +19,7 @@ namespace ZeMnaJedz.Models
         public int ComfortRatingSum { get; set; }
         public int ComfortRatingTotal { get; set; }
         public bool SmokingAllowed { get; set; }
+
+        public virtual IdentityDetails IdentityDetails { get; set; }
     }
 }

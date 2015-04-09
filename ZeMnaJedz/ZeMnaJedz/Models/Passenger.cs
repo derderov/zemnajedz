@@ -15,5 +15,7 @@ namespace ZeMnaJedz.Models
         public Enum Luggage { get; set; }
         [StringLength(500, ErrorMessage = "Cannot be longer than 500 characters.")]
         public string Message { get; set; }
+
+        public virtual IdentityDetails IdentityDetails { get; set; }
     }
 }
