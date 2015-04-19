@@ -7,7 +7,8 @@ namespace ZeMnaJedz.Models
 {
     public class Evaluation
     {
-        public int IdentityID { get; set; }
+        public int EvaluationID { get; set; }
+        public int IdentityDetailsID { get; set; }
         public int CarID { get; set; }
         public int OfferID { get; set; }
         public byte Safety { get; set; }

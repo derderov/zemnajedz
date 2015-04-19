@@ -8,14 +8,16 @@ namespace ZeMnaJedz.Models
 {
     public class Passenger
     {
+        public int PassengerID { get; set; }
         public int IdentityID { get; set; }
         public byte PassengersTotal { get; set; }
         public bool Pets { get; set; }
         public bool Children { get; set; }
-        public Enum Luggage { get; set; }
+        public int LuggageDictID { get; set; }
         [StringLength(500, ErrorMessage = "Cannot be longer than 500 characters.")]
         public string Message { get; set; }
 
+        public virtual LuggageDict Luggrage { get; set; }
         public virtual IdentityDetails IdentityDetails { get; set; }
     }
 }
