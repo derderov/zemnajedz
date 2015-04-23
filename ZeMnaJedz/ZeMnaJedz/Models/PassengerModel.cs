@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ZeMnaJedz.Models
 {
-    public class Passenger
+    public class PassengerModel
     {
         public int PassengerID { get; set; }
         public int IdentityID { get; set; }
@@ -17,7 +17,7 @@ namespace ZeMnaJedz.Models
         [StringLength(500, ErrorMessage = "Cannot be longer than 500 characters.")]
         public string Message { get; set; }
 
-        public virtual LuggageDict Luggrage { get; set; }
-        public virtual IdentityDetails IdentityDetails { get; set; }
+        public virtual LuggageDictModel Luggrage { get; set; }
+        public virtual UserDetails IdentityDetails { get; set; }
     }
 }

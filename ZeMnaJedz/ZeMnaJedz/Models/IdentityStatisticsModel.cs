@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ZeMnaJedz.Models
 {
-    public class IdentityStatistics
+    public class IdentityStatisticsModel
     {
         public int IdentityStatisticsId { get; set; }
         public int IdentityDetailsId { get; set; }
@@ -16,6 +16,6 @@ namespace ZeMnaJedz.Models
         public int RatingTotal { get; set; }
         public int SafetyRatingTotal { get; set; }
 
-        public virtual IdentityDetails IdentityDetails { get; set; }
+        public virtual UserDetails IdentityDetails { get; set; }
     }
 }

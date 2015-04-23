@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ZeMnaJedz.Models
 {
-    public class LuggageDict
+    public class LuggageDictModel
     {
         public int LuggageDictID { get; set; }
         public string Type { get; set; }

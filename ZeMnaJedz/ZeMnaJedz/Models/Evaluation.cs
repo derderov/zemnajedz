@@ -15,6 +15,6 @@ namespace ZeMnaJedz.Models
         public byte Comfort { get; set; }
         public byte OveralRating { get; set; }
 
-        public virtual IdentityDetails IdentityDetails { get; set; }
+        public virtual UserDetails IdentityDetails { get; set; }
     }
 }

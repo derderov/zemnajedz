@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ZeMnaJedz.Models
 {
-    public class IdentityDetails
+    public class UserDetails : IdentityUser
     {
         public int IdentityDetailsID { get; set; }
+        
         public string Login { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
@@ -22,6 +22,6 @@ namespace ZeMnaJedz.Models
         public bool Talktive { get; set; }
         public string Avatar { get; set; }
 
-        public virtual ICollection<Car> Cars { get; set; }
+        public virtual ICollection<CarModel> Cars { get; set; }
     }
 }
