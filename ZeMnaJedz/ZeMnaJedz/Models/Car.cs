@@ -8,7 +8,7 @@ namespace ZeMnaJedz.Models
 {
     public class CarModel
     {
-        [Required]
+        [Required][Key]
         public int CarID { get; set; }
 
         public int IdentityDetailsID { get; set; }
@@ -52,7 +52,6 @@ namespace ZeMnaJedz.Models
         /// </summary>
         public int ComfortRatingTotal { get; set; }
 
-
-        public virtual UserDetails IdentityDetails { get; set; }
+        public virtual ApplicationUser IdentityDetails { get; set; }
     }
 }

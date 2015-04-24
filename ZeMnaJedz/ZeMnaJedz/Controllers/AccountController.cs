@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ZeMnaJedz.Models;
+using System.Web.Security;
 
 namespace ZeMnaJedz.Controllers
 {
@@ -75,7 +76,7 @@ namespace ZeMnaJedz.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,8 +152,19 @@ namespace ZeMnaJedz.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser 
+                { 
+                    UserName = model.UserName, 
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    City = model.City,
+                    Voivodeship = model.Region,
+                    IsFemale = model.IsFemale,
+                    DateOfBirth = model.DateOfBirth
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -168,8 +180,14 @@ namespace ZeMnaJedz.Controllers
                 AddErrors(result);
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        [HttpPost]
+        public JsonResult doesUserNameExist(string UserName)
+        {
+            var user = Membership.GetUser(UserName);
+            return Json(user == null);
         }
 
         //

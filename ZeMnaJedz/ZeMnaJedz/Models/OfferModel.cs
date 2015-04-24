@@ -8,6 +8,7 @@ namespace ZeMnaJedz.Models
 {
     public class OfferModel
     {
+        [Required][Key]
         public int OfferID { get; set; }
         public int IdentityDetailsID { get; set; }
         public int CarID { get; set; }
@@ -22,8 +23,6 @@ namespace ZeMnaJedz.Models
         [StringLength(500, ErrorMessage = "Cannot be longer than 500 characters.")]
         public string AdditionalInfo { get; set; }
         public ICollection<PassengerModel> Passengers { get; set; }
-
-        //public virtual IdentityDetails IdentityDetails { get; set; }
         public virtual CarModel Car { get; set; }
     }
 }
